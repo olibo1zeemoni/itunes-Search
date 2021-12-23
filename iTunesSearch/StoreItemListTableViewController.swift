@@ -3,6 +3,7 @@ import UIKit
 
 class StoreItemListTableViewController: UITableViewController {
     let storeItemController = StoreItemController()
+   
     
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var filterSegmentedControl: UISegmentedControl!
@@ -16,7 +17,7 @@ class StoreItemListTableViewController: UITableViewController {
     
     let indicator = UIActivityIndicatorView(style: .large);
     
-    
+     
     
     
     override func viewDidLoad() {
@@ -105,9 +106,6 @@ class StoreItemListTableViewController: UITableViewController {
             }
         }
         
-        
-        
-
         //cell.itemImageView.image =
         // set cell.titleLabel to the item's name
         
@@ -147,6 +145,13 @@ class StoreItemListTableViewController: UITableViewController {
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+       // imageLoadTasks[indexPath] = Task{
+            
+       // }
+    }
+    
+    
 }
 
 extension StoreItemListTableViewController: UISearchBarDelegate {
@@ -162,5 +167,6 @@ extension StoreItemListTableViewController: UISearchBarDelegate {
         fetchMatchingItems()
         
     }
+    
 }
 
